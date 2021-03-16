@@ -1,0 +1,179 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>India Status</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <style>
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+        .color2 {
+        background-color: DodgerBlue;
+        color: white;
+        }
+        .color3 {
+        background-color: blue;
+        color: white;
+        }
+        .color4 {
+        background-color: green;
+        color: white;
+        }
+        .color5 {
+        background-color: Aqua;
+        color: white;
+        }
+        .color6 {
+        background-color: PaleVioletRed;
+        color: white;
+        }
+        .color7 {
+        background-color: MistyRose;
+        color: white;
+        }
+        .card {
+  display: block;
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  color: white;
+  font-family: 'Calibri';
+   background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  width: auto;
+  height: 100px;
+}
+
+       body {
+  background-image: url('https://www.oregon.gov/highered/about/PublishingImages/AdobeStock_321646472-web.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+  background-size: cover;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+table, th,td{
+border:5px solid black;
+}
+th,td{
+text align:centre;
+padding:8px;
+}
+
+
+
+</style>
+
+
+    </style>
+
+
+</head>
+<body class="p-3">
+ <nav class="one-edge-shadow
+  sticky-top navbar
+  navbar-expand-lg
+   navbar-light ">
+    <a class="navbar-brand" href="/covid"><STRONG>HOME</STRONG></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+
+
+
+        </li>
+
+      </ul>
+
+
+
+
+    </div>
+  </nav>
+<br>
+
+<h1 class="display-10" ><center>INDIA WIDE COVID STATUS</center></h1>
+
+
+    {% for i in glob %}
+<div class="container-fluid">
+    <div class="row">
+
+    <div class="card col m-3 color2 ">
+
+        <div class="card-body">
+            <h4 class="card-title">Total cases</h4>
+            <p class="card-text">{{i.total_case}}</p>
+        </div>
+    </div>
+
+    <div class="card col m-3 color3">
+
+        <div class="card-body">
+            <h4 class="card-title">Total Discharged</h4>
+            <p class="card-text">{{i.total_discharged}}</p>
+        </div>
+    </div>
+    <div class="card col m-3 color4">
+
+        <div class="card-body">
+            <h4 class="card-title">Total Deaths</h4>
+
+            <p class="card-text">{{i.total_deaths}}</p>
+        </div>
+    </div>
+    </div>
+    </div>
+    {% endfor %}
+<h2 class="display-7" ><center>STATES_WISE COVID Status</center></h2>
+<table class="center" style="width: 500px;" >
+
+    <tr>
+        <th>STATE</th>
+         <th>CONFIRMED CASES</th>
+         <th>DISCHARGED</th>
+         <th>DEATHS</th>
+
+
+    </tr>
+
+        {% for c in reg %}
+
+    <tr>
+
+
+
+    <td>{{c.state}}</td>
+
+    <td>{{c.state_discharged}}</td>
+         <td>{{c.state_case}}</td>
+        <td>{{c.state_deaths}}</td>
+      </tr>
+        {% endfor %}
+
+
+</table>
+
+
+
+</body>
+
+<br>
+<br>
+
+
+
+
+</html>
